@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 25.0.1706.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PortfolioMaker", "FirstMVCApp\PortfolioMaker.csproj", "{DAEF5E85-4384-4472-AA53-E3D4C8E51EDC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DAEF5E85-4384-4472-AA53-E3D4C8E51EDC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DAEF5E85-4384-4472-AA53-E3D4C8E51EDC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DAEF5E85-4384-4472-AA53-E3D4C8E51EDC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DAEF5E85-4384-4472-AA53-E3D4C8E51EDC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {8C5D19C7-5CD4-4976-B43B-E1CDC38B5675}
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		BaseDirectory = PortfolioMaker
+	EndGlobalSection
+EndGlobal
