@@ -1,0 +1,35 @@
+﻿
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>First name</th>
+                <th>Last name</th>
+                <th>age</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.Id</td>
+                    <td>@item.firstName</td>
+                    <td>@item.lastName</td>
+                    <td>@item.age</td>
+                </tr>
+            }
+
+        </tbody>
+    </table>
+
+
+
+CREATE TABLE `okullar` (
+  `id` int NOT NULL,
+  `OkulIsmi` varchar(45) NOT NULL,
+  `OkulAdresi` varchar(45) NOT NULL,
+  `BolumIsmi` varchar(45) NOT NULL,
+  `LisansTipi` varchar(45) NOT NULL,
+  `baslangicTarihi` date NOT NULL,
+  `bitisTarihi` date NOT NULL
+) 
