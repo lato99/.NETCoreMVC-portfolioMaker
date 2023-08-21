@@ -1,0 +1,320 @@
+﻿@{
+    ViewData["Title"] = "Portfolyo Sitesine Hoşgeldiniz";
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" type="text/css" href="../wwwroot/css/site.css">
+    <script src="~/js/site.js"></script>
+
+
+    <title>Page Title</title>
+</head>
+<body>
+
+
+
+    <div class="table-container">
+
+
+
+
+        <form>
+            <div class="kisisel_bilgiler">
+                userImg
+                <h2>Kisisel Bilgiler</h2>
+                <input type="file" class="userImg" id="userImg" name="userImage">
+                <img id="preview" src="#" alt="Uploaded Image">
+                <br />
+                <br />
+
+
+                <script>document.getElementById('userImg').addEventListener('change', function (event) {
+                        const previewImage = document.getElementById('preview');
+                        const selectedFile = event.target.files[0];
+
+                        if (selectedFile) {
+                            const reader = new FileReader();
+
+                            reader.onload = function (e) {
+                                previewImage.src = e.target.result;
+                            };
+
+                            reader.readAsDataURL(selectedFile);
+                        } else {
+                            previewImage.src = '#'; // Reset to a placeholder or empty image
+                        }
+                    });</script>
+                <table>
+                    <thead>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <label for="adInput">Adinizi giriniz</label>
+                            </td>
+                            <td>
+                                <input required type="text" placeholder="Adinizi buraya girin" id="adInput" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label for="soyadInput">Soyadinizi giriniz</label>
+                            </td>
+                            <td>
+                                <input required type="text" placeholder="Soyadınızı buraya girin" id="soyadInput" />
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <br />
+                <br />
+                <h2>Iletisim bilgileri</h2>
+                <table>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <label for="emailInput">Email giriniz</label>
+                            </td>
+                            <td>
+                                <input required type="email" placeholder="Emailinizi buraya girin" id="emailInput" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label for="telInput">Tel giriniz</label>
+                            </td>
+                            <td>
+                                <input required type="text" placeholder="Tel buraya girin" id="telInput" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label for="ageInput">Dogum tarihi Giriniz</label>
+                            </td>
+                            <td>
+                                <input required type="date" placeholder="Yasinizi giriniz" id="ageInput" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label for="addressInput">Adresinizi no giriniz</label>
+                            </td>
+                            <td>
+                                <input required type="text" placeholder="Adresinizi buraya girin" id="addressInput" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                            </td>
+                            <td>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <br />
+                <br />
+                <br />
+                <br />
+
+
+                <label>Medeni halinizi giriniz.</label>
+                <input type="radio" id="evli" name="medenihalInput" value="Evli" checked>
+                <label for="medenihalInput">Evli</label>
+                <input type="radio" id="bekar" name="medenihalInput" value="Bekar">
+                <label for="bekar">Bekar</label>
+            </div>
+
+
+
+            <input type="hidden" id="hiddenInput" value="-1" />
+            <input type="hidden" id="submitCount" value="0" />
+
+            <br />
+            <br />
+
+            <div id="warningMessage"></div>
+            <div class="isBilgileri">
+                <div id="isBilgileri">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Isyeri ismi</th>
+                                <th>Isyeri adresi</th>
+                                <th>Isyeri ismi</th>
+                                <th>Departman tipi</th>
+                                <th>başlangıç tarihi</th>
+                                <th>bitiş tarihi</th>
+
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><input placeholder="name" type="text"></td>
+                                <td><input placeholder="address" type="text"></td>
+                                <td><input placeholder="name" type="text"></td>
+                                <td><input placeholder="Departmant Name" type="text"></td>
+                                <td><input placeholder="start date" type="date"></td>
+                                <td><input placeholder="end date" type="date"></td>
+                                <td>
+                                    <button onclick="saveWorkInfo(this)">Save</button>
+
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                </div>
+            </div>
+
+            <br />
+            <br />
+
+            <div class="okulBilgileri">
+                <div id="okulBilgileri">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Okul ismi</th>
+                                <th>Okul adresi</th>
+                                <th>Bölüm ismi</th>
+                                <th>lisans tipi</th>
+                                <th>başlangıç tarihi</th>
+                                <th>bitiş tarihi</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="text"></td>
+                                <td><input type="date"></td>
+                                <td><input type="date"></td>
+                                <td>
+                                    <button onclick="saveEduInfo(this)">Save</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                </div>
+            </div>
+
+            <br />
+            <br />
+            <br />
+
+            <div class="isBilgileri">
+                <div id="isBilgileri">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Dil ismi</th>
+                                <th>Genel dil derecesi</th>
+                                <th>Okuma Derecesi</th>
+                                <th>Yazma Derecesi</th>
+                                <th>Dinleme Derecesi</th>
+                                <th>Konuşma Derecesi</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><input type="text"></td>
+                                <td>
+                                    <select>
+                                        <option value="a1">a1</option>
+                                        <option value="a2">a2</option>
+                                        <option value="b1">b1</option>
+                                        <option value="b2">b2</option>
+                                        <option value="c1">c1</option>
+                                        <option value="c2">c2</option>
+                                    </select>
+                                </td>
+                                <td>
+                                    <select>
+                                        <option value="a1">a1</option>
+                                        <option value="a2">a2</option>
+                                        <option value="b1">b1</option>
+                                        <option value="b2">b2</option>
+                                        <option value="c1">c1</option>
+                                        <option value="c2">c2</option>
+                                    </select>
+                                </td>
+                                <td>
+                                    <select>
+                                        <option value="a1">a1</option>
+                                        <option value="a2">a2</option>
+                                        <option value="b1">b1</option>
+                                        <option value="b2">b2</option>
+                                        <option value="c1">c1</option>
+                                        <option value="c2">c2</option>
+                                    </select>
+                                </td>
+                                <td>
+                                    <select>
+                                        <option value="a1">a1</option>
+                                        <option value="a2">a2</option>
+                                        <option value="b1">b1</option>
+                                        <option value="b2">b2</option>
+                                        <option value="c1">c1</option>
+                                        <option value="c2">c2</option>
+                                    </select>
+                                </td>
+                                <td>
+                                    <select>
+                                        <option value="a1">a1</option>
+                                        <option value="a2">a2</option>
+                                        <option value="b1">b1</option>
+                                        <option value="b2">b2</option>
+                                        <option value="c1">c1</option>
+                                        <option value="c2">c2</option>
+                                    </select>
+                                </td>
+                                <td>
+                                    <button onclick="saveLangInfo(this)">Save</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    </div>
+                        </div>
+
+
+
+
+                    <button id="submitPortfolio" onclick="submitForm()" style="padding-bottom:100px;">Submit your portfolio.</button>
+        </form>
+
+        <!--
+
+
+        <div id="result">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>First name</th>
+                        <th>Last name</th>
+                        <th>age</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </div>
+
+        -->
+
+
+    </div>
+    <footer>Other Information</footer>
+
+</body>
+
+
+
+
+
+</html>
